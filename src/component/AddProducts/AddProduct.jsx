@@ -18,7 +18,7 @@ const AddProduct = () => {
     reset();
   };
   return (
-    <div className="formContainer">
+    <div className="formContainer w-96 shadow-xl">
       <h4 className="formTitle">Add New Product</h4>
       <form
         className="space-y-4 text-[#534FAF]"
@@ -53,7 +53,7 @@ const AddProduct = () => {
           <input
             type="text"
             className="addProductInput"
-            {...register("image", { required: true })}
+            {...register("imageURL", { required: true })}
           />
           {errors.image && (
             <span className="text-red-500">This field is required</span>
