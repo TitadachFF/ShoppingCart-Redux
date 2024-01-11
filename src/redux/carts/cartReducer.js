@@ -54,9 +54,20 @@ const cartReducer = (state = initialState, action) => {
         }
       });
     case DECREASE_QUANTITY:
-    default:
-      return state;
-  }
-};
+                return state.map((product)=>{
+                    if(product.id === action.payload){
+                        return {
+                            ...product,
+                            quantity: product.quantity - 1
+                        }
+                    }
+                    else {
+                        return product;
+                    }
+                })
+            default:
+                return state;
+    }
+}
 
 export default cartReducer;

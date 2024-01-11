@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import CartItem from "./CartItem";
-
+import Bills from "./Bill";
 const MyCart = () => {
   const carts = useSelector((state) => state.carts);
 
@@ -18,6 +18,9 @@ const MyCart = () => {
             ) : (
               <div>No Product in your cart</div>
             )}
+          </div>
+          <div>
+            <Bills />
           </div>
         </div>
       </div>

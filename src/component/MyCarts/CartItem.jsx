@@ -7,6 +7,7 @@ import {
 } from "../../redux/carts/actions";
 import { addQuantity, removeQuantity } from "../../redux/products/actions";
 import { IoMdClose } from "react-icons/io";
+import Bills from "./Bill";
 const CartItem = ({ product }) => {
   const { id, name, imageURL, quantity, category, price, productId } = product;
   const dispatch = useDispatch();
@@ -19,8 +20,13 @@ const CartItem = ({ product }) => {
     dispatch(removeQuantity(productId, quantity));
   };
   const handleRemoveQuantityFromCart = () => {
-    
+    dispatch(decreaseQuantity(id));
+    dispatch(addQuantity(productId, 1));
   };
+
+  if (quantity === 0) {
+    handleRemoveFromCart();
+  }
 
   return (
     <div>
@@ -44,7 +50,7 @@ const CartItem = ({ product }) => {
             <div className="flex items-center border-gray-100">
               <span
                 onClick={handleRemoveQuantityFromCart}
-                className="cursor-pointer rounded-1 bg-gray-100 py-1 px-3 5 duration-100 hover:bg-gray-300 hover:text-black font-bold"
+                className="cursor-pointer rounded-1 bg-gray-100 py-1 px-3 5 duration-100 hover:bg-gray-300 hover:text-text-black font-bold"
               >
                 {""}-{""}
               </span>
