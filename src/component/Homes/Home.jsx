@@ -1,12 +1,12 @@
 import React from "react";
 import AddProduct from "../AddProducts/AddProduct";
 import { useSelector } from "react-redux";
-import ProductItem from "../../ProductItems/ProductItem";
+import ProductItem from "../ProductItems/ProductItem";
 
 const Home = () => {
   const products = useSelector((state) => state.products);
   console.log(products.products);
-  
+
   return (
     <div>
       <main className="py-8 max-w-7xl mx-auto px-4">
@@ -22,7 +22,7 @@ const Home = () => {
               )}
             </div>
           </div>
-                
+
           <div className="toast">
             <div className="alert alert-info bg-neutral text-white font-semibold">
               <span>New message arrived.</span>

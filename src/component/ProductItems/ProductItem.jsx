@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../redux/carts/action";
-import { removeQuantity } from "../redux/products/action";
+import { addToCart } from "../../redux/carts/actions";
+import { removeQuantity } from "../../redux/products/actions";
 
 const ProductItem = ({ product }) => {
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ const ProductItem = ({ product }) => {
   return (
     <div className="card md:w-96 bg-base-100 shadow-xl">
       <figure className="relative ">
-        <img src={imageURL} alt={name} className="h-80 w-[300px] rounded-md"  />
+        <img src={imageURL} alt={name} className="h-80 w-[300px] rounded-md" />
         <div className="badge badge-secondary absolute top-3 right-3">
           {category}
         </div>
@@ -27,8 +27,10 @@ const ProductItem = ({ product }) => {
         </p>
 
         <div className="flex justify-between">
-          <p className="w-full">Available"{quantity}</p>
-          <p className="text-left">{price}&</p>
+          <p className="w-full font-bold text-gray-500">
+            "Available" {quantity}
+          </p>
+          <p className="text-left font-bold">{price}฿</p>
         </div>
         <div className="card-action mt-2 ">
           <button

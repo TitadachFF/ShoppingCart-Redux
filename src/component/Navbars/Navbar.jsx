@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 //subscribe to cart in store
 const Navbar = () => {
   const carts = useSelector((state) => state.carts);
@@ -8,6 +8,11 @@ const Navbar = () => {
     (total, product) => total + product.quantity,
     0
   );
+  const dispatch = useDispatch();
+  const handlePageChange = (type) => {
+    dispatch({ type });
+  };
+
   console.log("carts:", carts);
   console.log("cartItemNo:", cartItemNo);
   return (
@@ -18,9 +23,13 @@ const Navbar = () => {
             ShoppingCart With Redux
           </a>
         </div>
-        <div className="flex-none" >
+        <div className="flex-none">
+          
           <div className="btn bg-gray-500 text-[20px] font-semibold text-white mr-[20px] ">
-            <div className="flex flex-auto items-center ml-2 w-[100px] gap-2   rounded-md  h-[40px]  hover:text-black ">
+            
+        
+              <button onClick={() => handlePageChange("HOME")}>
+              <div className="flex flex-auto items-center ml-2 w-[100px] gap-2   rounded-md  h-[40px]  hover:text-black ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -35,15 +44,17 @@ const Navbar = () => {
                   d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
                 />
               </svg>
-              <button className="">Home</button>{" "}
-            </div>
+              Home
+              </div>
+                </button>
+          
           </div>
-
           <div className="dropdown dropdown-end ">
             <div
               tabIndex={0}
               role="button"
               className="btn btn-ghost btn-circle"
+              onClick={() => handlePageChange("CART")}
             >
               <div className="indicator">
                 <svg

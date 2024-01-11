@@ -13,6 +13,7 @@ function App() {
       <Page />
       <Footer />
     </Provider>
+    
   );
 }
 
