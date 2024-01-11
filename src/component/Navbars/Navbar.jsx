@@ -18,9 +18,9 @@ const Navbar = () => {
             ShoppingCart With Redux
           </a>
         </div>
-        <div className="flex-none">
-          <div className="dropdown dropdown-end   font-bold  text-[20px] hover:bg-white hover:text-black   rounded-md w-[110px] h-[40px] bg-gray-700">
-            <div className="flex flex-auto items-center ml-2 w-[100px] gap-2   rounded-md  h-[40px]  ">
+        <div className="flex-none" >
+          <div className="btn bg-gray-500 text-[20px] font-semibold text-white mr-[20px] ">
+            <div className="flex flex-auto items-center ml-2 w-[100px] gap-2   rounded-md  h-[40px]  hover:text-black ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -39,7 +39,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="dropdown dropdown-end">
+          <div className="dropdown dropdown-end ">
             <div
               tabIndex={0}
               role="button"
@@ -74,7 +74,7 @@ const Navbar = () => {
               role="button"
               className="btn btn-ghost btn-circle avatar"
             >
-              <div className="w-10 rounded-full ">
+              <div className="w-20 rounded-full ">
                 <img
                   alt="Tailwind CSS Navbar component"
                   src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
